@@ -24,6 +24,6 @@ e <- e[complete.cases(t),]
 dateTime <- paste(e$Date, e$Time)
 dateTime <- setNames(dateTime, "DateTime")
 
-e <- e[ ,!(names(t) %in% c("Date", "Time"))]
-e <- cbind(dateTime, t)
+e <- e[ ,!(names(e) %in% c("Date", "Time"))]
+e <- cbind(dateTime, e)
 e$dateTime <- as.POSIXct(dateTime)
